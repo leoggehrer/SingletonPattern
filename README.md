@@ -35,7 +35,11 @@ Bei dieser Variante erfolgt die Initialisierung des Objektes bevor ein Zugriff a
 
 ## Umsetzung mit Static-Members
 
-Bei diese Variante wird das Konzept der statischen Klasse in C# verwendet. Dabei handelt es sich um eine spezielle Klassendefinition, die ausschließlich statische Mitglieder enthält und nicht insstanziiert werden kann. Den Quellcode für  die "*Umsetztung mit Static-Members*" finden Sie auf GitHub unter folgendem [Link](https://github.com/leoggehrer/SingletonPattern/tree/main/SingletonPattern.Logic/WithStatic).
+Bei diese Variante wird das Konzept der statischen Klasse in C# verwendet. Dabei handelt es sich um eine spezielle Klassendefinition, die ausschließlich statische Mitglieder enthält und nicht instanziiert werden kann. Den Quellcode für  die "*Umsetztung mit Static-Members*" finden Sie auf GitHub unter folgendem [Link](https://github.com/leoggehrer/SingletonPattern/tree/main/SingletonPattern.Logic/WithStatic).
+
+**Erläuterung**:
+
+Statische Klassen sind ein leistungsstarkes Werkzeug, um universelle Funktionen oder Konstanten zu definieren. Sie sind eine gute Wahl für Anwendungsfälle, in denen keine Objektinstanziierung erforderlich ist.
 
 ## Gegenüberstellung der unterschiedlichen Varianten
 
@@ -44,7 +48,7 @@ Hier ist eine tabellarische Gegenüberstellung der unterschiedlichen Varianten:
 | **Variante**                                  | **Beschreibung**                                                                                                                          | **Thread-Sicherheit**    | **Lazy-Loading** | **Komplexität** | **Empfohlene Anwendung**                                                    |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ | ---------------------- | ---------------------- | --------------------------------------------------------------------------------- |
 | **Eager Initialization**                      | Die Instanz wird direkt beim Laden der Klasse erstellt. Einfach umzusetzen.                                                                     | Thread-sicher                  | Nein                   | Einfach                | Wenn die Instanz immer benötigt wird und sofort verfügbar sein muss.            |
-| **Lazy`<T>`**                               | Verwaltet die verzögerte (Lazy-)Initialisierung und Thread-Sicherheit automatisch. Sehr moderne und saubere Lösung.                           | Thread-sicher                  | Ja                     | Einfach                | Empfohlen für die meisten modernen Anwendungen.                                  |
+| **Lazy `<T>`**                              | Verwaltet die verzögerte (Lazy-)Initialisierung und Thread-Sicherheit automatisch. Sehr moderne und saubere Lösung.                           | Thread-sicher                  | Ja                     | Einfach                | Empfohlen für die meisten modernen Anwendungen.                                  |
 | **Double-Check Locking**                      | Nutzt ein `lock`-Objekt und prüft zweimal, ob die Instanz bereits erstellt wurde, um unnötige Sperren zu vermeiden.                         | Thread-sicher                  | Ja                     | Mittel                 | Wenn man mehr Kontrolle über die Synchronisierung benötigt.                     |
 | **Einfaches Singleton (nicht thread-sicher)** | Eine einfache statische Instanz ohne Thread-Sicherheit. Kann zu Problemen führen, wenn mehrere Threads gleichzeitig auf die Instanz zugreifen. | Nicht thread-sicher            | Nein                   | Einfach                | Nur in Single-Thread-Umgebungen oder wenn Thread-Sicherheit nicht benötigt wird. |
 | **Vollständig statischer Typ**               | Die Klasse enthält nur statische Mitglieder und Methoden. Kein Konstruktor erforderlich.                                                       | Thread-sicher (je nach Design) | Nein                   | Einfach                | Für Klassen, die rein statische Methoden bereitstellen sollen.                   |
