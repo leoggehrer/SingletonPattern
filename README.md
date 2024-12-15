@@ -8,7 +8,7 @@ In diesem Abschnitt soll gezeigt werden, wie mit **C#** das Muster in unterschie
 
 Die Umsetzung mit einem **Lock-Objekt** erfordert die Bereitstellung eines speziellen Objektes (`_lock-Object`) für die Erstellung der Instanz. Dieses Objekt stellt sicher, dass in einer **Multitasking** Umgebung eine einzige Instanz instanziiert wird.
 
-Den Quellcode für  die "*Umsetztung mit einem Lock-Objekt*" finden Sie auf GitHub unter folgendem [Link](https://github.com/leoggehrer/ObserverPattern/tree/main/SingletonPattern.Logic/WithLock).
+Den Quellcode für  die "*Umsetztung mit einem Lock-Objekt*" finden Sie auf GitHub unter folgendem [Link](https://github.com/leoggehrer/SingletonPattern/tree/main/SingletonPattern.Logic/WithLock).
 
 **Funktionsweise:**
 
